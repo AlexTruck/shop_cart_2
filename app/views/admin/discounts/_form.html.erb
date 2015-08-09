@@ -1,0 +1,41 @@
+<%= form_for(@admin_discount) do |f| %>
+  <% if @admin_discount.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_discount.errors.count, "error") %> prohibited this admin_discount from being saved:</h2>
+
+      <ul>
+      <% @admin_discount.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :started_at %><br>
+    <%= f.datetime_select :started_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_at %><br>
+    <%= f.datetime_select :ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :variant %><br>
+    <%= f.text_field :variant %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
