@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809192022) do
+ActiveRecord::Schema.define(version: 20150810082606) do
 
   create_table "admin_discounts", force: :cascade do |t|
     t.datetime "started_at"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20150809192022) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "admin_discounts_admin_products", force: :cascade do |t|
+    t.integer "admin_discounts_id"
+    t.integer "admin_products_id"
+  end
+
+  add_index "admin_discounts_admin_products", ["admin_discounts_id"], name: "index_admin_discounts_admin_products_on_admin_discounts_id"
+  add_index "admin_discounts_admin_products", ["admin_products_id"], name: "index_admin_discounts_admin_products_on_admin_products_id"
 
   create_table "admin_products", force: :cascade do |t|
     t.string   "title"
