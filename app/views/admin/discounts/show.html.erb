@@ -21,13 +21,7 @@
 </p>
 
 <p>
-  <strong>Variant:</strong>
-  <%= @admin_discount.variant %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @admin_discount.amount %>
+  Every <%= @admin_discount.step %> of ordered will be discounted on <%= @admin_discount.amount %> <%= @admin_discount.variant %>
 </p>
 
 <%= link_to 'Edit', edit_admin_discount_path(@admin_discount) %> |

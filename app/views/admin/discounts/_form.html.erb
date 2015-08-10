@@ -35,6 +35,14 @@
       <%= f.label :amount %><br>
       <%= f.text_field :amount %>
     </div>
+    <div class="field">
+      <%= f.label :discounted_product %>
+      <%= f.collection_select :discounted_product, Admin::Product.order(:title), :id, :title %>
+    </div>
+    <div class="field">
+      <%= f.label :step %><br>
+      <%= f.text_field :step %>
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

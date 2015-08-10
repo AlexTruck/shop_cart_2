@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810082606) do
+ActiveRecord::Schema.define(version: 20150810083137) do
 
   create_table "admin_discounts", force: :cascade do |t|
     t.datetime "started_at"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20150810082606) do
     t.text     "description"
     t.string   "variant"
     t.decimal  "amount"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "step"
+    t.string   "discounted_product"
   end
 
   create_table "admin_discounts_admin_products", force: :cascade do |t|

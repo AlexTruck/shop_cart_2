@@ -6,9 +6,9 @@
   <span id='cart-sum'><%= @cart_sum %></span><span> total price</span>
 </div>
 
-<% @products.each do |prod|%>
+<% @products.each do |product|%>
   <div>
-    <div><%= prod.title %></div>
-    <div><button class="product-buy" data-id='<%= prod.id%>'>Buy</button></div>
+    <div><%= product.title %></div>
+    <div><button class="product-buy" data-id='<%= product.id %>'>Buy</button></div>
   </div>
 <% end %>
